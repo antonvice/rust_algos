@@ -22,15 +22,15 @@ This Rust application generates a CryptoToken with a unique ID and a hash based 
 
 ## Structure
 The main structure of the application is the CryptoToken struct, which is defined in token.rs:
-'''rust
+```rust
 struct CryptoToken {
     id: u64,
     hash: String,
 }
-'''
+```
 ## Functionality
 The CryptoToken struct has an associated function new() that generates a new CryptoToken with a random ID and a hash based on the ID:
-'''rust
+```rust
 impl CryptoToken {
     fn new() -> Result<CryptoToken, Box<dyn Error>> {
         const MAX_ID: u64 = 1_000_000;
@@ -42,11 +42,11 @@ impl CryptoToken {
         Ok(CryptoToken { id, hash })
     }
 }
-'''
+```
   
- ## Usage
+## Usage
 The main() function in token.rs demonstrates how to generate and print CryptoToken instances:
-'''rust
+```rust
   fn main() {
     let num_tokens = 5;
     for _ in 0..num_tokens {
@@ -56,10 +56,10 @@ The main() function in token.rs demonstrates how to generate and print CryptoTok
         }
     }
 }
-'''
+```
 ## Testing
 Unit tests are included in the tests module in token.rs:
-'''rust
+```rust
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -71,16 +71,17 @@ mod tests {
         assert!(!token.hash.is_empty());
     }
 }
-'''
+```
 To run the tests, execute the following command in your terminal:
-'''bash
+```bash
 cargo test
-'''
+```
 ## Dependencies
 This application uses the following external crates:
 
 rand: For generating random numbers.
 sha2: For creating SHA-256 hashes.
+
 Make sure to include these dependencies in your Cargo.toml file:
 [dependencies]
 rand = "0.8.5"
