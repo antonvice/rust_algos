@@ -83,6 +83,8 @@ rand: For generating random numbers.
 sha2: For creating SHA-256 hashes.
 
 Make sure to include these dependencies in your Cargo.toml file:
+```
 [dependencies]
 rand = "0.8.5"
 sha2 = "0.9.8"
+```
